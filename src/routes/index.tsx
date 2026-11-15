@@ -95,14 +95,16 @@ function Index() {
       <HorizontalSections>
       <section id="work" className="horizontal-panel bg-orange px-6 py-24 text-foreground md:px-12 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-14 md:mb-20">
-            <p className="mb-4 text-xs font-bold uppercase text-primary-foreground/65">01 / Selected work</p>
-            <h2 className="max-w-3xl text-5xl font-black leading-[0.9] md:text-7xl">Made for the<br />full-screen era.</h2>
+          <div className="mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-20">
+            <div>
+              <p className="mb-4 text-xs font-bold uppercase text-primary-foreground/65">01 / Selected work</p>
+              <h2 className="max-w-3xl text-5xl font-black leading-[0.9] md:text-7xl">Made for the<br />full-screen era.</h2>
+            </div>
+            <Link to="/portfolio" className="inline-flex items-center gap-2 text-sm font-black uppercase underline decoration-2 underline-offset-8 hover:opacity-70">
+              See the full portfolio <ArrowUpRight className="size-4" />
+            </Link>
           </div>
           <ReelGrid verticalOnly />
-          <Link to="/portfolio" className="mt-12 inline-flex items-center gap-2 text-sm font-black uppercase underline decoration-2 underline-offset-8 hover:opacity-70">
-            See the full portfolio <ArrowUpRight className="size-4" />
-          </Link>
         </div>
       </section>
 
