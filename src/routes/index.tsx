@@ -148,7 +148,11 @@ function Index() {
       </HorizontalSections>
 
       <section className="brand-glow" aria-label="NXT Frame">
-        <h2>NXT FRAME</h2>
+        <h2 aria-hidden="true">
+          {"NXT FRAME".split("").map((letter, index) => (
+            <span key={index}>{letter === " " ? " " : letter}</span>
+          ))}
+        </h2>
       </section>
     </main>
   );

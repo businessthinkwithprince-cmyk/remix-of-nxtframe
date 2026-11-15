@@ -314,12 +314,15 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--background);
-  opacity: 0.22;
   cursor: default;
+}
+
+.brand-glow h2 span {
+  opacity: 0.22;
   transition: opacity 0.45s ease, color 0.45s ease, text-shadow 0.45s ease;
 }
 
-.brand-glow h2:hover {
+.brand-glow h2 span:hover {
   opacity: 1;
   color: var(--cyan);
   text-shadow:
