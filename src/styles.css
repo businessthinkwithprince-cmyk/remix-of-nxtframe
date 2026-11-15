@@ -343,7 +343,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   max-width: min(820px, 78svh);
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 #work.horizontal-panel article { grid-column: auto; }
