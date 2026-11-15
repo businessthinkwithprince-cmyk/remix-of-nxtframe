@@ -4,6 +4,7 @@ import logoMark from "@/assets/nxt-frame-mark.webp";
 import { ContactBlock } from "@/components/site/contact-block";
 import { ReelGrid } from "@/components/site/reels";
 import { HeroScroll } from "@/components/site/hero-scroll";
+import { HorizontalSections } from "@/components/site/horizontal-sections";
 import { SERVICE_PAGES, SOCIAL_LINKS, CONTACT_EMAIL, buttonCyan, buttonOutlineInk, getSiteOrigin } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -91,7 +92,8 @@ function Index() {
       </section>
       </HeroScroll>
 
-      <section id="work" className="bg-orange px-6 py-24 text-foreground md:px-12 md:py-32">
+      <HorizontalSections>
+      <section id="work" className="horizontal-panel bg-orange px-6 py-24 text-foreground md:px-12 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex flex-col justify-between gap-8 md:mb-20 md:flex-row md:items-end">
             <div>
@@ -102,14 +104,14 @@ function Index() {
               Vertical-first edits, cut with a clear point of view and built to earn the next second.
             </p>
           </div>
-          <ReelGrid />
+          <ReelGrid verticalOnly />
           <Link to="/portfolio" className="mt-12 inline-flex items-center gap-2 text-sm font-black uppercase underline decoration-2 underline-offset-8 hover:opacity-70">
             See the full portfolio <ArrowUpRight className="size-4" />
           </Link>
         </div>
       </section>
 
-      <section id="specialties" className="bg-cyan px-6 py-24 text-foreground md:px-12 md:py-32">
+      <section id="specialties" className="horizontal-panel bg-cyan px-6 py-24 text-foreground md:px-12 md:py-32">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <div>
             <p className="mb-4 text-xs font-bold uppercase">02 / What we do</p>
@@ -143,7 +145,10 @@ function Index() {
         </div>
       </section>
 
-      <ContactBlock eyebrow="03 / Start a conversation" />
+      <div className="horizontal-panel horizontal-contact">
+        <ContactBlock eyebrow="03 / Start a conversation" />
+      </div>
+      </HorizontalSections>
     </main>
   );
 }

@@ -286,6 +286,133 @@
   .story-phone-copy, .story-phone-camera, .story-phone-home { opacity: 1; }
 }
 
+.horizontal-scene {
+  position: relative;
+  height: 340svh;
+  --section-x: 0px;
+}
+
+.horizontal-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.horizontal-track {
+  display: flex;
+  height: 100%;
+  transform: translateX(var(--section-x));
+  will-change: transform;
+}
+
+.horizontal-panel {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 36px 48px;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-panel > div, .horizontal-contact > section > div {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.horizontal-panel h2 { font-size: 56px; }
+.horizontal-panel p { line-height: 1.4; }
+.horizontal-panel h2 + p { margin-top: 20px; }
+.horizontal-panel p:first-child { margin-bottom: 12px; }
+
+#work.horizontal-panel > div > div:first-child {
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+#work.horizontal-panel > div > div:nth-child(2) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: min(820px, 78svh);
+  margin-inline: auto;
+}
+
+#work.horizontal-panel article { grid-column: auto; }
+#work.horizontal-panel .video-frame { max-height: 48svh; }
+#work.horizontal-panel .video-title { font-size: 32px; }
+#work.horizontal-panel .play-mark { top: 78%; }
+#work.horizontal-panel .video-artwork { padding: 20px; }
+#work.horizontal-panel > div > a { margin-top: 24px; }
+
+#specialties.horizontal-panel > div { gap: 48px; align-items: center; }
+#specialties.horizontal-panel h2 + p { font-size: 16px; }
+#specialties.horizontal-panel h2 + p + div { margin-top: 24px; }
+#specialties.horizontal-panel > div > div:last-child > div { padding-block: 16px; }
+#specialties.horizontal-panel h3 { font-size: 20px; }
+
+.horizontal-contact { padding: 0; background: var(--foreground); }
+.horizontal-contact > section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 36px 48px;
+}
+.horizontal-contact h2 { font-size: 72px; }
+.horizontal-contact > section > div { gap: 40px; }
+
+@media (max-width: 1023px) {
+  #specialties.horizontal-panel > div { grid-template-columns: 1fr 1fr; gap: 32px; }
+  #specialties.horizontal-panel > div > div:last-child > div { grid-template-columns: 28px 1fr; gap: 8px; }
+  #specialties.horizontal-panel > div > div:last-child p { display: none; }
+  .horizontal-contact h2 { font-size: 56px; }
+}
+
+@media (max-width: 640px) {
+  .horizontal-panel, .horizontal-contact > section { padding: 28px 24px; }
+  .horizontal-contact { padding: 0; }
+  .horizontal-panel h2, .horizontal-contact h2 { font-size: 40px; }
+  #work.horizontal-panel > div > div:first-child { gap: 12px; margin-bottom: 24px; }
+  #work.horizontal-panel > div > div:first-child > p { font-size: 14px; }
+  #work.horizontal-panel > div > div:nth-child(2) { gap: 8px; }
+  #work.horizontal-panel .video-artwork { padding: 10px; }
+  #work.horizontal-panel .video-title { font-size: 18px; }
+  #work.horizontal-panel article > div:last-child { display: none; }
+  #work.horizontal-panel .play-mark { width: 28px; height: 28px; }
+  #work.horizontal-panel .play-mark svg { width: 14px; height: 14px; }
+  #work.horizontal-panel > div > a { font-size: 12px; }
+  #specialties.horizontal-panel > div { grid-template-columns: 1fr; gap: 24px; }
+  #specialties.horizontal-panel h2 + p { display: none; }
+  #specialties.horizontal-panel h2 + p + div { margin-top: 20px; gap: 10px; }
+  #specialties.horizontal-panel > div > div:last-child > div { padding-block: 12px; }
+  #specialties.horizontal-panel h3 { font-size: 18px; }
+  .horizontal-contact > section > div { gap: 32px; }
+  .horizontal-contact h2 + p { font-size: 16px; }
+  .horizontal-contact h2 + p + a { margin-top: 24px; }
+  .horizontal-contact a[href^="mailto:"] { font-size: 16px; }
+}
+
+@media (max-height: 650px) {
+  .horizontal-panel, .horizontal-contact > section { padding-block: 20px; }
+  .horizontal-contact { padding: 0; }
+  .horizontal-panel h2, .horizontal-contact h2 { font-size: 36px; }
+  #work.horizontal-panel > div > div:first-child { margin-bottom: 16px; }
+  #work.horizontal-panel > div > div:nth-child(2) { max-width: 65svh; }
+  #work.horizontal-panel > div > a { margin-top: 16px; }
+  #specialties.horizontal-panel > div { gap: 16px; }
+  #specialties.horizontal-panel > div > div:last-child > div { padding-block: 8px; }
+  .horizontal-contact > section > div { gap: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-scene { height: auto; }
+  .horizontal-stage { position: relative; height: auto; overflow: visible; }
+  .horizontal-track { display: block; transform: none; will-change: auto; }
+  .horizontal-panel { min-height: 100svh; height: auto; }
+  .horizontal-contact > section { min-height: 100svh; }
+}
+
 .site-cursor-trail-layer {
   position: absolute;
   position: fixed;
