@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import logoMark from "@/assets/nxt-frame-mark.webp";
 import { ContactBlock } from "@/components/site/contact-block";
 import { ReelGrid } from "@/components/site/reels";
+import { HeroScroll } from "@/components/site/hero-scroll";
 import { SERVICE_PAGES, SOCIAL_LINKS, CONTACT_EMAIL, buttonCyan, buttonOutlineInk, getSiteOrigin } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -65,8 +66,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="overflow-hidden bg-background font-sans text-foreground">
-      <section id="top" className="relative flex min-h-[760px] flex-col items-center justify-center bg-hero-surface px-6 py-24 text-hero-ink md:min-h-[850px]">
+    <main className="overflow-clip bg-background font-sans text-foreground">
+      <HeroScroll>
+      <section id="top" className="relative flex h-full flex-col items-center justify-center bg-hero-surface px-6 py-24 text-hero-ink">
         <div className="absolute inset-x-0 top-10 z-10 flex flex-col items-center text-center md:top-12">
           <img className="size-14 object-contain invert md:size-16" src={logoMark} alt="NXT Frame mark" width={64} height={64} fetchPriority="high" />
           <p className="mt-2 text-base font-black uppercase">NXT Frame</p>
@@ -85,8 +87,9 @@ function Index() {
             </Link>
           </div>
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 h-2 w-full bg-orange" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-2 w-full bg-cyan" />
       </section>
+      </HeroScroll>
 
       <section id="work" className="bg-orange px-6 py-24 text-foreground md:px-12 md:py-32">
         <div className="mx-auto max-w-7xl">
