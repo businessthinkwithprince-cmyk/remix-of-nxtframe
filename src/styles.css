@@ -246,6 +246,9 @@
   line-height: 1;
   letter-spacing: 0;
   opacity: var(--phone-copy-opacity);
+  /* Counter the phone zoom so the words keep one size on screen. */
+  transform: scale(calc(1 / var(--phone-scale, 1)));
+  will-change: transform;
 }
 
 .story-phone-copy span {
