@@ -57,7 +57,7 @@ export function HeroScroll({ children }: { children: ReactNode }) {
           <div ref={phoneRef} className="story-phone">
             <div className="story-phone-display">
               <div className="story-phone-camera" aria-hidden="true" />
-              <p className="story-phone-copy">story<br /><span>to frame</span></p>
+              <p className="story-phone-copy">Story<br /><span>To<br />&nbsp;Frame</span></p>
               <div className="story-phone-home" aria-hidden="true" />
             </div>
           </div>
