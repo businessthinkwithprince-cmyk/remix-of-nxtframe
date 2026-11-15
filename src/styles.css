@@ -308,6 +308,7 @@
 }
 
 .brand-glow h2 {
+  position: relative;
   margin: 0;
   font-size: clamp(52px, 13vw, 190px);
   font-weight: 900;
@@ -317,18 +318,21 @@
   cursor: default;
 }
 
-.brand-glow h2 span {
+.brand-glow .brand-glow-base {
   opacity: 0.22;
-  transition: opacity 0.45s ease, color 0.45s ease, text-shadow 0.45s ease;
 }
 
-.brand-glow h2 span:hover {
-  opacity: 1;
+.brand-glow .brand-glow-lit {
+  position: absolute;
+  inset: 0;
   color: var(--cyan);
+  pointer-events: none;
   text-shadow:
     0 0 18px color-mix(in oklab, var(--cyan) 80%, transparent),
     0 0 60px color-mix(in oklab, var(--cyan) 55%, transparent),
     0 0 140px color-mix(in oklab, var(--cyan) 35%, transparent);
+  -webkit-mask-image: radial-gradient(circle 150px at var(--gx, -1000px) var(--gy, -1000px), #000 0%, transparent 70%);
+  mask-image: radial-gradient(circle 150px at var(--gx, -1000px) var(--gy, -1000px), #000 0%, transparent 70%);
 }
 
 .horizontal-stage {

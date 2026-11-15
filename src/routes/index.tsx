@@ -147,11 +147,24 @@ function Index() {
       </div>
       </HorizontalSections>
 
-      <section className="brand-glow" aria-label="NXT Frame">
-        <h2 aria-hidden="true">
-          {"NXT FRAME".split("").map((letter, index) => (
-            <span key={index}>{letter === " " ? " " : letter}</span>
-          ))}
+      <section
+        className="brand-glow"
+        aria-label="NXT Frame"
+        onMouseMove={(event) => {
+          const heading = event.currentTarget.querySelector("h2");
+          if (!heading) return;
+          const rect = heading.getBoundingClientRect();
+          heading.style.setProperty("--gx", `${event.clientX - rect.left}px`);
+          heading.style.setProperty("--gy", `${event.clientY - rect.top}px`);
+        }}
+        onMouseLeave={(event) => {
+          const heading = event.currentTarget.querySelector("h2");
+          heading?.style.setProperty("--gx", "-1000px");
+        }}
+      >
+        <h2>
+          <span className="brand-glow-base">NXT FRAME</span>
+          <span className="brand-glow-lit" aria-hidden="true">NXT FRAME</span>
         </h2>
       </section>
     </main>
