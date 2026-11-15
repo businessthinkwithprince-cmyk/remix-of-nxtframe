@@ -144,6 +144,10 @@ function Index() {
         <ContactBlock eyebrow="03 / Start a conversation" />
       </div>
       </HorizontalSections>
+
+      <section className="brand-glow" aria-label="NXT Frame">
+        <h2>NXT FRAME</h2>
+      </section>
     </main>
   );
 }

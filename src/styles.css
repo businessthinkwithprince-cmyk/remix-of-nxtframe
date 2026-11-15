@@ -300,6 +300,34 @@
   --section-x: 0px;
 }
 
+.brand-glow {
+  background: var(--foreground);
+  padding: 72px 24px 88px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.brand-glow h2 {
+  margin: 0;
+  font-size: clamp(52px, 13vw, 190px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--background);
+  opacity: 0.22;
+  cursor: default;
+  transition: opacity 0.45s ease, color 0.45s ease, text-shadow 0.45s ease;
+}
+
+.brand-glow h2:hover {
+  opacity: 1;
+  color: var(--cyan);
+  text-shadow:
+    0 0 18px color-mix(in oklab, var(--cyan) 80%, transparent),
+    0 0 60px color-mix(in oklab, var(--cyan) 55%, transparent),
+    0 0 140px color-mix(in oklab, var(--cyan) 35%, transparent);
+}
+
 .horizontal-stage {
   position: sticky;
   top: 0;
@@ -343,7 +371,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   max-width: min(820px, 78svh);
-  margin-inline: 0;
+  margin-inline: auto;
 }
 
 #work.horizontal-panel article { grid-column: auto; }
