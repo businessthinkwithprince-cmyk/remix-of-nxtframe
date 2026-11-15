@@ -30,7 +30,7 @@ export function HeroScroll({ children }: { children: ReactNode }) {
       ) * 1.15;
       scene.style.setProperty("--panel-offset", `${(1 - reveal) * 100}%`);
       scene.style.setProperty("--phone-scale", `${1 + easedZoom * (fillScale - 1)}`);
-      scene.style.setProperty("--phone-copy-opacity", `${1 - clamp((zoom - 0.55) / 0.3)}`);
+      scene.style.setProperty("--phone-copy-opacity", `${1 - clamp((zoom - 0.15) / 0.35)}`);
       scene.style.setProperty("--phone-detail-opacity", `${1 - clamp(zoom / 0.25)}`);
       scene.dataset["covered"] = reveal === 1 ? "true" : "false";
     };
@@ -57,10 +57,11 @@ export function HeroScroll({ children }: { children: ReactNode }) {
           <div ref={phoneRef} className="story-phone">
             <div className="story-phone-display">
               <div className="story-phone-camera" aria-hidden="true" />
-              <p className="story-phone-copy">Story<br /><span>To<br />&nbsp;Frame</span></p>
               <div className="story-phone-home" aria-hidden="true" />
             </div>
           </div>
+          {/* Kept outside the scaling phone so the text stays crisp during the zoom. */}
+          <p className="story-phone-copy">Story<br /><span>To<br />&nbsp;Frame</span></p>
         </section>
       </div>
     </div>

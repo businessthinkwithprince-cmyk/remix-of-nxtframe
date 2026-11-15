@@ -239,12 +239,20 @@
 }
 
 .story-phone-copy {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
   margin: 0;
   text-align: center;
   font-size: 36px;
   font-weight: 900;
   line-height: 1;
   letter-spacing: 0;
+  color: var(--hero-ink);
+  pointer-events: none;
   opacity: var(--phone-copy-opacity);
 }
 
